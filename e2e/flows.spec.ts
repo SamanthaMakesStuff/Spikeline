@@ -157,3 +157,22 @@ test('the page reflows at 320px with no horizontal scroll', async ({ page }) => 
     expect(overflow, route).toBeLessThanOrEqual(0);
   }
 });
+
+test('example data loads from Welcome, is labelled, asks before replacing real answers, and can be cleared', async ({ page }) => {
+  await page.goto('/');
+  await page.getByRole('button', { name: 'Try it with example data' }).click();
+  await expect(page).toHaveURL(/#\/results/);
+  await expect(page.getByText('Example data. These aren’t your answers.')).toBeVisible();
+  await expect(page.getByRole('heading', { level: 1, name: 'Your profile' })).toBeVisible();
+
+  await page.getByRole('button', { name: 'Clear example data' }).click();
+  await expect(page.getByText('Example data. These aren’t your answers.')).toBeHidden();
+  await page.goto('/#/q/C1/1');
+  await page.getByRole('radio', { name: 'Fairly easy' }).first().check();
+  await page.waitForTimeout(500);
+  await page.goto('/#/settings');
+  await page.getByRole('button', { name: 'Try it with example data' }).click();
+  await expect(page.getByRole('dialog')).toContainText('Your own answers will be gone');
+  await page.getByRole('button', { name: 'Cancel' }).click();
+  await expect(page).toHaveURL(/#\/settings/);
+});

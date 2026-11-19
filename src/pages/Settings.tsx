@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { LoadExampleData } from '../app/ExampleData';
 import { DeleteEverything } from '../app/DeleteEverything';
 import { RestoreBackup, SaveBackupButton } from '../app/BackupControls';
 import { BACKGROUND_OPTIONS, COLOUR_OPTIONS, OptionGroup } from '../app/ThemePicker';
@@ -39,6 +40,7 @@ export function Settings() {
       <section className="stack" aria-labelledby="data-h">
         <h2 id="data-h" style={{ fontSize: '1.5rem' }}>Your answers</h2>
         <SaveBackupButton />
+        <div className="stack-sm"><div><LoadExampleData className="btn" /></div><p className="hint prose">Fills the app with made-up answers so you can look at the results. You’ll be asked before anything of yours is replaced.</p></div>
         <RestoreBackup />
         <div id="delete" className="stack-sm" tabIndex={-1}>
           <DeleteEverything />

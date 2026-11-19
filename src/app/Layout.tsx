@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { Link, Outlet, useLocation } from 'react-router-dom';
+import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { LiveRegion } from '../a11y/LiveRegion';
 import { STORAGE_FAILED } from '../content/copy';
 import { useStore } from '../storage/store';
@@ -50,6 +50,9 @@ export function Layout() {
   useApplySettings();
   useRouteFocus();
   const persistent = useStore((s) => s.persistent);
+  const example = useStore((s) => !!s.data.flags.example);
+  const clearExample = useStore((s) => s.clearExample);
+  const navigate = useNavigate();
   const coloursOpen = useUI((s) => s.coloursOpen);
   const closeColours = useUI((s) => s.closeColours);
   return (
@@ -57,6 +60,12 @@ export function Layout() {
       <a href="#main" className="skip-link no-print">Skip to content</a>
       <Header />
       {!persistent && <p className="banner" role="alert">{STORAGE_FAILED}</p>}
+      {example && (
+        <div className="banner no-print" role="note">
+          Example data. These aren’t your answers.{' '}
+          <button type="button" className="btn-link" onClick={() => { clearExample(); navigate('/hub'); }}>Clear example data</button>
+        </div>
+      )}
       <main id="main">
         <Outlet />
       </main>

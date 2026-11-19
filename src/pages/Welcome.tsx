@@ -1,5 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import { LoadExampleData } from '../app/ExampleData';
 import { RestoreBackup } from '../app/BackupControls';
 import { ThemePicker } from '../app/ThemePicker';
 import { usePageTitle } from '../app/usePageTitle';
@@ -46,6 +47,7 @@ export function Welcome() {
           <p className="prose">{WELCOME.howLong}</p>
           <p className="prose">{WELCOME.privacy}</p>
           <p><button type="button" className="btn-link" onClick={openSupport}>Need support? Find help now</button></p>
+          <p><LoadExampleData /></p>
         </section>
 
         {!returning && (

@@ -65,6 +65,8 @@ export const storedStateSchema = z.object({
     /** Sections the person has reached the end of (so they show as done even with skipped items). */
     finished: z.array(z.string()).optional(),
     lastSection: z.string().optional(),
+    /** True while the answers are the built-in example data. */
+    example: z.boolean().optional(),
   }).default({}),
 });
 

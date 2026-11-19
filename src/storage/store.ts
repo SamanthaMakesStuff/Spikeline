@@ -25,6 +25,8 @@ interface Store {
   setShareDraft: (preset: PresetId, selection: ShareSelection) => void;
   replaceAll: (state: StoredState) => void;
   deleteEverything: () => void;
+  /** Removes example answers but keeps the person's settings. */
+  clearExample: () => void;
 }
 
 const initial = loadState();
@@ -85,6 +87,12 @@ export const useStore = create<Store>((set, get) => {
     setShareDraft: (preset, selection) => touch({ shareDrafts: { ...get().data.shareDrafts, [preset]: selection } }),
     replaceAll: (state) => {
       set({ data: state, hasSavedData: true, saveStatus: 'unsaved' });
+      flushSave();
+    },
+    clearExample: () => {
+      const keep = get().data.settings;
+      const fresh = { ...emptyState(), settings: keep };
+      set({ data: fresh, hasSavedData: true, saveStatus: 'unsaved' });
       flushSave();
     },
     deleteEverything: () => {
