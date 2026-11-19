@@ -70,6 +70,20 @@ export const SUMMARY = {
   empty: 'Answer a few more sections to see your profile.',
 };
 
+/** Same sentences in the first person, for a Spikeprint (read by other people). */
+export const SUMMARY_ME = {
+  easier: 'Compared with my own middle, things are easier for me in {areas}.',
+  stretch: 'My biggest stretch areas are {areas}.',
+  drops: 'On hard days my biggest drops are in {areas}.',
+  costlyOne: '{areas} is manageable but costs me a lot of energy.',
+  costlyMany: '{areas} are manageable but cost me a lot of energy.',
+  drivers: 'Most of the reasons I chose relate to {areas}.',
+  empty: 'Not enough answers yet.',
+};
+
+export const SPIKEPRINT_CAPTION =
+  'Further out means easier for me. The solid line is a typical day; the dashed line is a hard day. Batteries show how much energy each area takes. This compares me with myself, not with other people.';
+
 export const BUTTONS = {
   create: `Create my ${SHARE_NAME}`,
   nextSteps: 'Next steps',

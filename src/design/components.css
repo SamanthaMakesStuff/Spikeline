@@ -171,3 +171,20 @@ dialog.dialog::backdrop{background:color-mix(in srgb, var(--ink) 55%, transparen
 
 @media print{.page{padding:0}}
 .support-inline.prominent a,.q-band a,.area-card .cap a{color:inherit}
+
+/* Spikeprint (shared view, preview and print) */
+.spikeprint{display:flex;flex-direction:column;gap:var(--space-5);padding:var(--space-5);border:var(--outline-width) solid var(--outline);border-radius:var(--radius-card);background:var(--bg);color:var(--ink)}
+.sp-wordmark{font-family:var(--font-display);font-weight:700;font-size:1.3rem;letter-spacing:-0.01em}
+.share-steps{display:flex;flex-wrap:wrap;gap:var(--space-2);list-style:none;margin:0;padding:0}
+.preset-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(16rem,100%),1fr));gap:var(--space-3)}
+.sens{display:inline-flex;align-items:center;gap:var(--space-1);font-size:.8rem;color:var(--ink-muted)}
+.link-box{width:100%;max-width:100%;font:inherit;word-break:break-all}
+@media print{
+  @page{size:A4;margin:14mm}
+  .spikeprint{border:0;padding:0;border-radius:0}
+  .spikeprint[data-theme]{--bg:Canvas;--surface:Canvas;background:Canvas;color:CanvasText}
+  .spikeprint .wheel-box{flex:0 0 120mm;width:120mm}
+  .spikeprint section,.spikeprint .area-card,.spikeprint .panel{break-inside:avoid}
+  .spikeprint h2{break-after:avoid}
+  .print-page{padding:0}
+}

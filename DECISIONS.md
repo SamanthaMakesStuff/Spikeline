@@ -32,8 +32,19 @@ Where the build departs from, or fills a gap in, `spikeline-build-brief.md`. The
 - `flags` was added to the stored state (`consented`, `storageNoteSeen`, `finished`, `lastSection`) so a section with skipped items can show as done and Carry on knows where you were.
 - `putAnswer` replaces an answer (used so hidden follow-up answers are removed); `setAnswer` merges.
 
+## Sharing (milestone 7)
+- **One model for every format.** A Spikeprint is a `SpikeprintData` object (computed results for the chosen sections only, short keys, zod-validated). The viewer, print view, preview, PDF, image and private link all render from it, so they can’t disagree. It never contains raw answers (a test checks that no item ID appears).
+- **Links store references, not text,** for strength sentences and ideas (looked up from content in the viewer). That keeps the default Work link under 2,000 characters. Free text you type (name, notes, interests) does travel in the link.
+- **Voice:** Spikeprints are written in the first person (“my own middle”, “easier for me”) because other people read them. The app’s own results stay second person.
+- **Preset defaults:** Health leaves Diagnoses off (the brief’s list of off-by-default items for Health doesn’t name it, so it is tickable). Friends and family has no summary paragraph, as in the brief’s list. The hard-period note always opens an output when it applies, whatever sections are ticked.
+- **Example data:** a Spikeprint made from example data says “Example data, not a real person’s profile” on every format.
+- **PDF:** `@react-pdf/renderer`, loaded only when you ask for a PDF. Lexend and Bricolage are embedded (WOFF, since the PDF library can’t read WOFF2). Text is real text; language `en-GB`. The fit check counts pages. If a PDF needs more than one page it does not shrink text; it names the biggest sections to untick or lets you allow a second page. A typical profile with the Work defaults fits one page; a heavy example (8 of 11 areas flagged) does not, and says so. The PDF spreads ideas over both columns, uses the first idea per group, and uses 10.5pt text with 1.35 line height.
+- **Image:** a pure SVG card (no foreignObject, so Safari can draw it) with fonts embedded as data URLs, drawn on a canvas at 2×. Text is wrapped by measuring in the browser.
+- **CSP:** `script-src` gains `'wasm-unsafe-eval'` and `connect-src` gains `data:`, both needed by the PDF library’s WebAssembly (loaded from a data URL, no network). Nothing leaves the origin.
+- **Viewer:** `/view` has its own minimal frame (Colours, Need support?, “Make your own with Spikeline”), uses the viewer’s own saved colours (or the defaults), and saves nothing.
+
 ## Not done yet
-- Milestones 7 and 8 (sharing: presets, PDF, PNG, private link, print; polish and the manual accessibility pass).
+- Milestone 8 (polish) and the manual accessibility pass.
 - Support numbers and links in `signposting.ts` and `Info.tsx` are marked `VERIFY`. I have not been able to check them.
 - Adjustments and the masking, C9.3 and "hitting a wall" wording carry `// REVIEW` comments for co-design.
 - PWA stretch goal: left for later, as agreed.

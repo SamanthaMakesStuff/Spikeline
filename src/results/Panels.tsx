@@ -4,8 +4,8 @@ import { SupportCard } from '../app/SupportCard';
 import { ADHD_INTRO, LOAD_CAPTION, MASKING_RESULTS_NOTE } from '../content/copy';
 import { AUTONOMY_IDEA, IDEAS_DISCLAIMER, LENS_IDEAS, SENSE_IDEAS, SPOKE_IDEAS, type Idea } from '../content/adjustments';
 import { LENS_WORDS } from '../content/drivers';
-import type { Hue } from '../content/items';
-import { SPOKE_BY_ID } from '../content/spokes';
+import type { Hue, Lens } from '../content/items';
+import { SPOKES, SPOKE_BY_ID } from '../content/spokes';
 import type { Profile } from '../scoring/profile';
 import { basedOnText, round, wordBand } from './describe';
 import { BatteryGlyph } from './glyphs';
@@ -202,25 +202,45 @@ export function EnergyPanel({ profile }: { profile: Profile }) {
   );
 }
 
-export function ideasFor(profile: Profile, mode: 'work' | 'everyday') {
+export interface IdeaGroup {
+  title: string;
+  items: string[];
+  /** Reference into the ideas library, so a Spikeprint link can carry a few characters instead of the text. */
+  ref: { k: 's' | 'l' | 'n' | 'a'; r: string };
+}
+
+const SENSE_KEYS = Object.keys(SENSE_IDEAS);
+const senseKeyOf = (label: string) => label.toLowerCase().split(' ')[0];
+
+export function ideasFor(profile: { spokes: { spokeId: keyof typeof SPOKE_IDEAS; num: number; label: string; ease?: number; relLabel?: string; flags: string[] }[]; topLenses: Lens[]; modalities: string[]; autonomy?: { pressure?: number } }, mode: 'work' | 'everyday', perGroup = 3): IdeaGroup[] {
   const pick = (i: Idea) => (mode === 'work' ? i.work : i.everyday);
-  const groups: { title: string; items: string[] }[] = [];
+  const groups: IdeaGroup[] = [];
   for (const s of profile.spokes) {
     if (s.ease === undefined) continue;
     if (s.relLabel === 'stretch' || s.flags.length > 0) {
-      groups.push({ title: s.label, items: SPOKE_IDEAS[s.spokeId].slice(0, 3).map(pick) });
+      groups.push({ title: s.label, items: SPOKE_IDEAS[s.spokeId].slice(0, perGroup).map(pick), ref: { k: 's', r: String(s.num) } });
     }
   }
-  if (profile.topLenses.length) {
-    groups.push({
-      title: `Ideas for ${profile.topLenses.map((l) => LENS_WORDS[l]).join(' and ')}`,
-      items: profile.topLenses.map((l) => pick(LENS_IDEAS[l])),
-    });
+  for (const l of profile.topLenses) {
+    groups.push({ title: `Ideas for ${LENS_WORDS[l]}`, items: [pick(LENS_IDEAS[l])], ref: { k: 'l', r: l } });
   }
-  const senses = profile.modalities.map((m) => SENSE_IDEAS[m.toLowerCase().split(' ')[0]]).filter(Boolean);
-  if (senses.length) groups.push({ title: 'For your senses', items: senses });
-  if ((profile.autonomy?.pressure ?? 0) >= 50) groups.push({ title: 'Autonomy', items: [pick(AUTONOMY_IDEA)] });
+  const senseKeys = profile.modalities.map(senseKeyOf).filter((k) => SENSE_KEYS.includes(k));
+  if (senseKeys.length) groups.push({ title: 'For your senses', items: senseKeys.map((k) => SENSE_IDEAS[k]), ref: { k: 'n', r: senseKeys.join(',') } });
+  if ((profile.autonomy?.pressure ?? 0) >= 50) groups.push({ title: 'Autonomy', items: [pick(AUTONOMY_IDEA)], ref: { k: 'a', r: '' } });
   return groups;
+}
+
+/** Rebuild an idea group from its reference (used when reading a shared Spikeprint). */
+export function resolveIdeaRef(ref: IdeaGroup['ref'], mode: 'work' | 'everyday', perGroup = 2): { title: string; items: string[] } | undefined {
+  const pick = (i: Idea) => (mode === 'work' ? i.work : i.everyday);
+  if (ref.k === 's') {
+    const spoke = SPOKES.find((x) => String(x.n) === ref.r);
+    return spoke ? { title: spoke.label, items: SPOKE_IDEAS[spoke.id].slice(0, perGroup).map(pick) } : undefined;
+  }
+  if (ref.k === 'l' && ref.r in LENS_IDEAS) return { title: `Ideas for ${LENS_WORDS[ref.r as Lens]}`, items: [pick(LENS_IDEAS[ref.r as Lens])] };
+  if (ref.k === 'n') return { title: 'For your senses', items: ref.r.split(',').filter((k) => k in SENSE_IDEAS).map((k) => SENSE_IDEAS[k]) };
+  if (ref.k === 'a') return { title: 'Autonomy', items: [pick(AUTONOMY_IDEA)] };
+  return undefined;
 }
 
 export function IdeasPanel({ profile, mode = 'everyday' }: { profile: Profile; mode?: 'work' | 'everyday' }) {

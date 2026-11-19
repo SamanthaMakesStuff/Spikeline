@@ -10,7 +10,7 @@ import { SupportPanel } from './SupportPanel';
 import { ThemePicker } from './ThemePicker';
 import { useUI } from './ui';
 
-function useApplySettings() {
+export function useApplySettings() {
   const settings = useStore((s) => s.data.settings);
   useEffect(() => {
     applySettings(settings);
@@ -81,6 +81,35 @@ export function Layout() {
       <Dialog id="colours" open={coloursOpen} onClose={closeColours} title="Colours">
         <ThemePicker idPrefix="dialog-theme" />
       </Dialog>
+      <LiveRegion />
+    </>
+  );
+}
+
+/** Minimal frame for a shared Spikeprint: the viewer’s own colours, a Colours button and support, nothing of the app’s data. */
+export function ViewLayout() {
+  useApplySettings();
+  const coloursOpen = useUI((s) => s.coloursOpen);
+  const closeColours = useUI((s) => s.closeColours);
+  const openColours = useUI((s) => s.openColours);
+  const openSupport = useUI((s) => s.openSupport);
+  return (
+    <>
+      <a href="#main" className="skip-link no-print">Skip to content</a>
+      <header className="app-header no-print">
+        <button type="button" className="btn btn-support header-support" onClick={openSupport}>
+          <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="5" style={{ fill: 'var(--butter)', stroke: 'var(--on-support)', strokeWidth: 1.5 }} /></svg>
+          Need support?
+        </button>
+        <Link to="/" className="wordmark">Spikeline</Link>
+        <div className="header-actions"><button type="button" className="btn" onClick={openColours}>Colours</button></div>
+      </header>
+      <main id="main"><Outlet /></main>
+      <footer className="page no-print" style={{ paddingTop: 0 }}>
+        <p><Link to="/">Make your own with Spikeline</Link></p>
+      </footer>
+      <SupportPanel />
+      <Dialog id="colours" open={coloursOpen} onClose={closeColours} title="Colours"><ThemePicker idPrefix="view-theme" /></Dialog>
       <LiveRegion />
     </>
   );

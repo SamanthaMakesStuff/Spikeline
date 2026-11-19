@@ -1,6 +1,6 @@
 import { useEffect, useId, useRef, useState } from 'react';
 import { BAND_COUNT, bandPath, easePoint, easeRadius, groupBoundaries, outlinePath, polar, spokeAngle, wedgePath, wedgeStart, wheelGeometry } from '../geometry/wheel';
-import type { Profile } from '../../scoring/profile';
+import type { WheelProfile } from '../../share/spikeprint';
 import { SPOKE_BY_ID } from '../../content/spokes';
 import { describeSpoke } from '../../results/describe';
 import { batterySegments } from '../geometry/wheel';
@@ -10,7 +10,7 @@ export interface WheelLayers { typical: boolean; hard: boolean; cost: boolean; m
 export const DEFAULT_LAYERS: WheelLayers = { typical: true, hard: true, cost: true, middle: true, band: false };
 
 interface Props {
-  profile: Profile;
+  profile: WheelProfile;
   layers?: WheelLayers;
   size?: number;
   /** Interactive wedges (screen). Off for exports. */

@@ -1,6 +1,8 @@
 import { LABELS } from '../content/copy';
 import { costWord, easeWord } from '../content/scales';
-import type { RelativeLabel, SpokeResult } from '../scoring/profile';
+import type { RelativeLabel } from '../scoring/profile';
+
+export interface SpokeLike { label: string; ease?: number; fluctuation?: number; cost?: number; relLabel?: RelativeLabel }
 
 export const lowerFirst = (s: string) => (s ? s[0].toLowerCase() + s.slice(1) : s);
 
@@ -20,7 +22,7 @@ const dropPhrase = (fluct: number | undefined) =>
   fluct === undefined ? undefined : fluct >= 25 ? 'drops a lot on hard days' : fluct >= 10 ? 'drops a little on hard days' : 'changes little on hard days';
 
 /** One sentence for the wedge's accessible name and the popover. */
-export function describeSpoke(s: SpokeResult): string {
+export function describeSpoke(s: SpokeLike): string {
   if (s.ease === undefined) return `${s.label}: ${LABELS.notEnough.toLowerCase()}.`;
   const parts = [`${easeText(s.ease)} on a typical day`];
   const drop = dropPhrase(s.fluctuation);

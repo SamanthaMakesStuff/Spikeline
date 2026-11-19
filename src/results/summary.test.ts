@@ -10,6 +10,15 @@ const spread = {
   'C12.1': A.ec(4), 'C12.2': A.e(4), 'C12.3': A.e(4), 'C12.4': A.e(4), 'C12.5': A.ec(4), // literacy 100
 };
 
+describe('first-person summary for a Spikeprint', () => {
+  it('speaks as the person, never to the viewer', () => {
+    const text = summaryText(computeProfile(spread), 'me');
+    expect(text).toMatch(/^Compared with my own middle, things are easier for me in /);
+    expect(text).toContain('My biggest stretch areas are Movement and hand skills.');
+    expect(text).not.toMatch(/\byou(r)?\b/i);
+  });
+});
+
 describe('text summary', () => {
   it('names strengths and stretch areas in plain words, comparing only with the person’s own middle', () => {
     const text = summaryText(computeProfile(spread));

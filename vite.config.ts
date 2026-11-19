@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 // Strict CSP, added to the built HTML only (the dev server needs inline scripts for hot reload).
 // The same policy is in public/_headers for hosts that support response headers.
 const CSP =
-  "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'";
+  "default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'none'";
 
 function cspPlugin(): Plugin {
   return {

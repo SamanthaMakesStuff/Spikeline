@@ -7,14 +7,19 @@ import { Question } from '../pages/Question';
 import { Reflection } from '../pages/Reflection';
 import { Settings } from '../pages/Settings';
 import { Welcome } from '../pages/Welcome';
-import { Layout } from './Layout';
+import { Layout, ViewLayout } from './Layout';
 import { Results } from '../results/Results';
 import { AreaDetail } from '../results/AreaDetail';
-import { ComingSoon } from '../pages/ComingSoon';
+import { Share } from '../pages/Share';
+import { Print } from '../pages/Print';
+import { View } from '../pages/View';
 
 export function App() {
   return (
     <Routes>
+      <Route element={<ViewLayout />}>
+        <Route path="/view" element={<View />} />
+      </Route>
       <Route element={<Layout />}>
         <Route path="/" element={<Welcome />} />
         <Route path="/how-it-works" element={<HowItWorks />} />
@@ -24,9 +29,8 @@ export function App() {
         <Route path="/reflection" element={<Reflection />} />
         <Route path="/results" element={<Results />} />
         <Route path="/results/area/:spokeId" element={<AreaDetail />} />
-        <Route path="/share" element={<ComingSoon title="Create my Spikeprint" />} />
-        <Route path="/view" element={<ComingSoon title="Spikeprint" />} />
-        <Route path="/print" element={<ComingSoon title="Print my Spikeprint" />} />
+        <Route path="/share" element={<Share />} />
+        <Route path="/print" element={<Print />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/support" element={<Support />} />
         <Route path="/next-steps" element={<NextSteps />} />
