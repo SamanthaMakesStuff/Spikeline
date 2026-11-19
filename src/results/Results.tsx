@@ -12,6 +12,7 @@ import { CardsView, RowsView } from './Views';
 import { AdhdPanel, EnergyPanel, ExtrasPanels, IdeasPanel, LoadPanel, StrengthsPanel } from './Panels';
 import { easeText, relWords } from './describe';
 import { useProfile } from './useProfile';
+import { GlossaryTip } from '../app/GlossaryTip';
 
 type View = 'wheel' | 'rows' | 'cards';
 
@@ -120,6 +121,7 @@ export function Results() {
         {view === 'wheel' && (
           <>
             <p className="muted prose">{CHART_CAPTION}</p>
+            <p className="cluster"><GlossaryTip term="Your middle" /><GlossaryTip term="Stretch area" /><GlossaryTip term="Energy cost" /><GlossaryTip term="Hard day" /></p>
             <p className="small muted prose">{HARD_DAY_LEGEND_NOTE}</p>
           </>
         )}

@@ -43,8 +43,16 @@ Where the build departs from, or fills a gap in, `spikeline-build-brief.md`. The
 - **CSP:** `script-src` gains `'wasm-unsafe-eval'` and `connect-src` gains `data:`, both needed by the PDF library’s WebAssembly (loaded from a data URL, no network). Nothing leaves the origin.
 - **Viewer:** `/view` has its own minimal frame (Colours, Need support?, “Make your own with Spikeline”), uses the viewer’s own saved colours (or the defaults), and saves nothing.
 
+## Polish (milestone 8)
+- **Glossary:** “What is energy cost?”-style buttons open a short note (click, tap or keyboard; Esc closes) next to the cost and hard-day questions, the results chart and the masking section. “How this works” has the full list.
+- **Targets and type:** stand-alone links, summaries and key rows are at least 44px tall; badge numbers are 15px or more.
+- **Phone header:** the wordmark and Need support? share the first row.
+- **Copy:** Spikeprint text is first person; the app’s own results are second person.
+
 ## Not done yet
-- Milestone 8 (polish) and the manual accessibility pass.
+- The manual accessibility pass (NVDA, VoiceOver, zoom) and the other browsers (Firefox, Safari, iOS Safari, Android Chrome). Only Chromium has been tested.
+- PDF tagging has not been checked.
+- Support numbers and links still need verifying; co-design review is still needed for all REVIEW-marked wording.
 - Support numbers and links in `signposting.ts` and `Info.tsx` are marked `VERIFY`. I have not been able to check them.
 - Adjustments and the masking, C9.3 and "hitting a wall" wording carry `// REVIEW` comments for co-design.
 - PWA stretch goal: left for later, as agreed.

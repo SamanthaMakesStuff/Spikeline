@@ -13,4 +13,6 @@ npm run e2e            # Playwright + axe (builds and serves dist/)
 
 If Playwright can't find a browser, set `CHROMIUM_PATH` to one you already have.
 
+Screenshots of every main screen in all six themes are in `docs/screenshots/`.
+
 All answers stay in the browser's `localStorage`. There is no server, analytics, cookies or third-party request. Content (item bank, copy, signposting) lives in `src/content/`.

@@ -9,6 +9,7 @@ import { SPOKES, SPOKE_BY_ID } from '../content/spokes';
 import type { Profile } from '../scoring/profile';
 import { basedOnText, round, wordBand } from './describe';
 import { BatteryGlyph } from './glyphs';
+import { GlossaryTip } from '../app/GlossaryTip';
 
 /** Outlined pill meter with a diagonal-stripe fill: deliberately unlike the capacity charts. No middle line. */
 export function LoadMeter({ label, value, basedOn, hue = 'tomato' }: { label: string; value?: number; basedOn?: number; hue?: Hue }) {
@@ -122,6 +123,7 @@ export function ExtrasPanels({ profile }: { profile: Profile }) {
         <section className="stack" aria-labelledby="mask-h">
           <h2 id="mask-h" style={{ fontSize: '1.7rem' }}>Adjusting how you come across</h2>
           <p className="prose">{MASKING_RESULTS_NOTE}</p>
+          <p><GlossaryTip term="Masking" /></p>
           {mk?.shown && <LoadMeter label={mk.label} value={mk.value} basedOn={mk.basedOn} />}
           {mc?.shown && <LoadMeter label={mc.label} value={mc.value} basedOn={mc.basedOn} />}
           {profile.masking.where.length > 0 && <p><strong>Where:</strong> {profile.masking.where.join(', ')}.</p>}

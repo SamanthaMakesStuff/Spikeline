@@ -11,6 +11,7 @@ import { SECTION_BY_ID } from '../content/sections';
 import { sanitiseAnswer, stepsFor, type StepKind } from '../engine/flow';
 import type { Answer } from '../storage/schema';
 import { CheckGroup, PillRadioGroup, type PillOption } from './answers';
+import { GlossaryTip } from './GlossaryTip';
 import { useMediaQuery } from './useMediaQuery';
 
 interface Props {
@@ -144,6 +145,12 @@ export function QuestionItem({ item, answer, onChange, focusFirst }: Props) {
   return (
     <section ref={rootRef} className="q-item" aria-label={`Question ${item.id}`}>
       {steps.map(renderStep)}
+      {(steps.includes('cost') || steps.includes('hard')) && (
+        <p className="cluster">
+          {steps.includes('cost') && <GlossaryTip term="Energy cost" />}
+          {steps.includes('hard') && <GlossaryTip term="Hard day" />}
+        </p>
+      )}
       {why && (
         <details className="disclosure">
           <summary>Why are we asking this?</summary>
