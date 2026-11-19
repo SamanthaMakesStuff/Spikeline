@@ -1,0 +1,666 @@
+{
+  "schemaVersion": 1,
+  "bankVersion": "1.0.0",
+  "createdAt": "2026-11-10T10:00:00.000Z",
+  "updatedAt": "2026-11-10T10:00:00.000Z",
+  "settings": {
+    "colours": "bright",
+    "background": "system",
+    "font": "default",
+    "textSize": 100,
+    "lineSpacing": "normal",
+    "letterSpacing": "normal",
+    "motion": "off",
+    "layout": "auto"
+  },
+  "aboutYou": {
+    "preferredName": "Alex"
+  },
+  "optedInModules": [],
+  "answers": {
+    "C1.1": {
+      "ease": 2,
+      "answeredAt": "2026-11-10T10:00:00.000Z",
+      "cost": 2,
+      "hard": 1
+    },
+    "C1.2": {
+      "ease": 3,
+      "answeredAt": "2026-11-10T10:00:00.000Z",
+      "cost": 2,
+      "hard": 2
+    },
+    "C1.3": {
+      "ease": 3,
+      "answeredAt": "2026-11-10T10:00:00.000Z",
+      "cost": 2,
+      "hard": 2
+    },
+    "C2.1": {
+      "ease": 1,
+      "answeredAt": "2026-11-10T10:00:00.000Z",
+      "cost": 4,
+      "hard": 0,
+      "drivers": [
+        "i-cant-start-without-clear-steps-or-knowing-exac",
+        "i-cant-judge-how-long-it-will-take-so-i-put-it-o"
+      ]
+    },
+    "C2.2": {
+      "ease": 2,
+      "answeredAt": "2026-11-10T10:00:00.000Z",
+      "cost": 4,
+      "hard": 1
+    },
+    "C2.3": {
+      "ease": 1,
+      "answeredAt": "2026-11-10T10:00:00.000Z",
+      "cost": 4,
+      "hard": 0
+    },
+    "C3.1": {
+      "ease": 2,
+      "answeredAt": "2026-11-10T10:00:00.000Z",
+      "cost": 3,
+      "hard": 1
+    },
+    "C3.2": {
+      "ease": 2,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C3.3": {
+      "ease": 2,
+      "answeredAt": "2026-11-10T10:00:00.000Z",
+      "cost": 3
+    },
+    "C3.4": {
+      "ease": 1,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C3.5": {
+      "ease": 2,
+      "answeredAt": "2026-11-10T10:00:00.000Z",
+      "cost": 3,
+      "hard": 1
+    },
+    "C4.1": {
+      "ease": 4,
+      "answeredAt": "2026-11-10T10:00:00.000Z",
+      "cost": 1,
+      "hard": 4
+    },
+    "C4.2": {
+      "ease": 3,
+      "answeredAt": "2026-11-10T10:00:00.000Z",
+      "cost": 1,
+      "hard": 3
+    },
+    "C4.3": {
+      "ease": 4,
+      "answeredAt": "2026-11-10T10:00:00.000Z",
+      "cost": 1
+    },
+    "C4.4": {
+      "ease": 3,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C5.1": {
+      "ease": 3,
+      "answeredAt": "2026-11-10T10:00:00.000Z",
+      "cost": 4,
+      "hard": 2
+    },
+    "C5.2": {
+      "ease": 3,
+      "answeredAt": "2026-11-10T10:00:00.000Z",
+      "cost": 3
+    },
+    "C5.3": {
+      "ease": 2,
+      "answeredAt": "2026-11-10T10:00:00.000Z",
+      "cost": 4
+    },
+    "C5.4": {
+      "ease": 2,
+      "answeredAt": "2026-11-10T10:00:00.000Z",
+      "cost": 3,
+      "hard": 1
+    },
+    "C5.5": {
+      "ease": 2,
+      "answeredAt": "2026-11-10T10:00:00.000Z",
+      "cost": 3,
+      "hard": 1
+    },
+    "C6.3": {
+      "ease": 1,
+      "answeredAt": "2026-11-10T10:00:00.000Z",
+      "cost": 4,
+      "hard": 0,
+      "drivers": [
+        "im-unsure-what-people-mean-or-expect",
+        "its-exhausting-because-im-watching-myself-the-wh"
+      ]
+    },
+    "C6.4": {
+      "ease": 1,
+      "answeredAt": "2026-11-10T10:00:00.000Z",
+      "cost": 4,
+      "hard": 0
+    },
+    "C6.5": {
+      "ease": 2,
+      "answeredAt": "2026-11-10T10:00:00.000Z",
+      "cost": 3
+    },
+    "C6.6": {
+      "ease": 1,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C8.3": {
+      "ease": 2,
+      "answeredAt": "2026-11-10T10:00:00.000Z",
+      "cost": 3
+    },
+    "C8.4": {
+      "ease": 2,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C9.5": {
+      "ease": 1,
+      "answeredAt": "2026-11-10T10:00:00.000Z",
+      "cost": 3,
+      "hard": 0
+    },
+    "C7.8": {
+      "ease": 0,
+      "answeredAt": "2026-11-10T10:00:00.000Z",
+      "cost": 4,
+      "hard": 0
+    },
+    "C10.1": {
+      "ease": 1,
+      "answeredAt": "2026-11-10T10:00:00.000Z",
+      "cost": 3,
+      "hard": 0,
+      "drivers": [
+        "not-knowing-what-will-happen-makes-me-anxious",
+        "i-like-change-but-struggle-to-re-plan"
+      ]
+    },
+    "C10.2": {
+      "ease": 2,
+      "answeredAt": "2026-11-10T10:00:00.000Z",
+      "cost": 3
+    },
+    "C11.1": {
+      "ease": 2,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C11.2": {
+      "ease": 2,
+      "answeredAt": "2026-11-10T10:00:00.000Z",
+      "cost": 1
+    },
+    "C11.3": {
+      "ease": 2,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C12.1": {
+      "ease": 3,
+      "answeredAt": "2026-11-10T10:00:00.000Z",
+      "cost": 1
+    },
+    "C12.2": {
+      "ease": 3,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C12.3": {
+      "ease": 4,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C12.4": {
+      "ease": 3,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C12.5": {
+      "ease": 4,
+      "answeredAt": "2026-11-10T10:00:00.000Z",
+      "cost": 1
+    },
+    "C1.4": {
+      "freq": 4,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C1.5": {
+      "like": 3,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C2.4": {
+      "freq": 3,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C2.5": {
+      "ease": 3,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C4.5": {
+      "ease": 3,
+      "cost": 2,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C5.6": {
+      "freq": 3,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C6.1": {
+      "like": 4,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C6.2": {
+      "like": 3,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C6.7": {
+      "freq": 3,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C7.1": {
+      "freq": 2,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C7.2": {
+      "freq": 3,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C7.3": {
+      "freq": 2,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C7.4": {
+      "freq": 2,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C7.5": {
+      "freq": 2,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C7.6": {
+      "freq": 3,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C7.7": {
+      "freq": 4,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C7.9": {
+      "choices": [
+        "sound",
+        "light",
+        "touch"
+      ],
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C8.1": {
+      "freq": 1,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C8.2": {
+      "freq": 3,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C8.5": {
+      "freq": 1,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C9.1": {
+      "freq": 2,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C9.2": {
+      "freq": 1,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C9.3": {
+      "freq": 1,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C9.4": {
+      "freq": 4,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C10.3": {
+      "freq": 2,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C10.4": {
+      "freq": 3,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C10.5": {
+      "like": 2,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C11.4": {
+      "freq": 2,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C13.1": {
+      "like": 4,
+      "costFollowUp": "sometimes",
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C13.2": {
+      "like": 4,
+      "costFollowUp": "sometimes",
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C13.3": {
+      "like": 4,
+      "costFollowUp": "often",
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C13.4": {
+      "like": 4,
+      "costFollowUp": "sometimes",
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C13.5": {
+      "like": 3,
+      "costFollowUp": "often",
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C13.6": {
+      "like": 2,
+      "costFollowUp": "often",
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C13.7": {
+      "like": 2,
+      "costFollowUp": "sometimes",
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C13.8": {
+      "like": 3,
+      "costFollowUp": "sometimes",
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C13.9": {
+      "like": 3,
+      "costFollowUp": "sometimes",
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C14.1": {
+      "freq": 1,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C14.2": {
+      "freq": 4,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C14.3": {
+      "choices": [
+        "talking-to-people",
+        "noise-light-or-crowds",
+        "being-misunderstood-or-criticised"
+      ],
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "C14.4": {
+      "choices": [
+        "time-alone",
+        "my-interests",
+        "movement-or-exercise"
+      ],
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M1.1": {
+      "freq": 2,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M1.2": {
+      "freq": 2,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M1.3": {
+      "freq": 4,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M1.4": {
+      "freq": 1,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M1.5": {
+      "freq": 2,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M1.6": {
+      "freq": 1,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M1.7": {
+      "freq": 4,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M1.8": {
+      "choices": [
+        "work-or-study",
+        "with-strangers",
+        "with-friends"
+      ],
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M1.9": {
+      "choices": [
+        "to-get-by-at-work-or-study",
+        "to-make-or-keep-relationships",
+        "to-stay-safe-or-avoid-trouble"
+      ],
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M1.10": {
+      "freq": 3,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M1.11": {
+      "freq": 4,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M2.7": {
+      "choices": [
+        "people-and-relationships",
+        "animals-and-nature",
+        "fiction-and-fictional-worlds"
+      ],
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M2.1": {
+      "freq": 1,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M2.2": {
+      "freq": 4,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M2.3": {
+      "freq": 2,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M2.4": {
+      "freq": 4,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M2.5": {
+      "freq": 3,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M2.6": {
+      "freq": 3,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M3.2": {
+      "freq": 2,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M3.3": {
+      "freq": 2,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M3.5": {
+      "choices": [
+        "sleeping-badly",
+        "more-shutdowns-or-meltdowns",
+        "dropping-routines"
+      ],
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M3.6": {
+      "choices": [
+        "masking",
+        "life-changes",
+        "work-or-study-demands"
+      ],
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M5.1": {
+      "freq": 2,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M5.2": {
+      "freq": 3,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M5.3": {
+      "freq": 1,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M5.4": {
+      "freq": 3,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M5.5": {
+      "freq": 3,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M5.6": {
+      "freq": 3,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M5.7": {
+      "ease": 3,
+      "cost": 2,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M5.8": {
+      "freq": 1,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M5.9": {
+      "freq": 1,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M5.10": {
+      "freq": 4,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M5.11": {
+      "freq": 1,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M5.12": {
+      "freq": 3,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M5.13": {
+      "freq": 4,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M5.14": {
+      "freq": 1,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M5.T1": {
+      "like": 4,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M5.T2": {
+      "like": 4,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M5.T3": {
+      "like": 4,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M5.T4": {
+      "like": 4,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M5.T5": {
+      "like": 4,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M4.1": {
+      "freq": 2,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M4.2": {
+      "freq": 2,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M4.3": {
+      "freq": 3,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M4.4": {
+      "freq": 4,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M4.5": {
+      "freq": 2,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M4.6": {
+      "freq": 2,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M7.1": {
+      "freq": 2,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M7.2": {
+      "freq": 4,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M7.3": {
+      "ease": 3,
+      "cost": 2,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M7.4": {
+      "like": 3,
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M7.5": {
+      "choices": [
+        "not-knowing-what-will-happen",
+        "feeling-my-independence-is-threatened",
+        "not-enough-energy"
+      ],
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    },
+    "M2.0": {
+      "text": "A long-running fantasy series and old synthesisers",
+      "answeredAt": "2026-11-10T10:00:00.000Z"
+    }
+  },
+  "reflection": {},
+  "shareDrafts": {},
+  "flags": {
+    "consented": true,
+    "storageNoteSeen": true,
+    "finished": [
+      "C1",
+      "C2"
+    ]
+  }
+}

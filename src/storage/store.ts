@@ -15,6 +15,7 @@ interface Store {
   hasSavedData: boolean;
   saveStatus: SaveStatus;
   setAnswer: (itemId: string, patch: Partial<Answer>) => void;
+  putAnswer: (itemId: string, answer: Answer) => void;
   clearAnswer: (itemId: string) => void;
   setSettings: (patch: Partial<Settings>) => void;
   setAbout: (patch: Partial<AboutYou>) => void;
@@ -68,6 +69,7 @@ export const useStore = create<Store>((set, get) => {
       const prev = get().data.answers[itemId];
       touch({ answers: { ...get().data.answers, [itemId]: { ...prev, ...patch, answeredAt: new Date().toISOString() } } });
     },
+    putAnswer: (itemId, answer) => touch({ answers: { ...get().data.answers, [itemId]: { ...answer, answeredAt: new Date().toISOString() } } }),
     clearAnswer: (itemId) => {
       const { [itemId]: _removed, ...rest } = get().data.answers;
       touch({ answers: rest });

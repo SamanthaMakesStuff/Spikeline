@@ -59,7 +59,13 @@ export const storedStateSchema = z.object({
   answers: z.record(z.string(), answerSchema),
   reflection: z.object({ whatHelps: z.string().max(4000).optional(), wantPeopleToKnow: z.string().max(4000).optional() }),
   shareDrafts: z.record(z.string(), shareSelectionSchema),
-  flags: z.object({ consented: z.boolean().optional(), storageNoteSeen: z.boolean().optional() }).default({}),
+  flags: z.object({
+    consented: z.boolean().optional(),
+    storageNoteSeen: z.boolean().optional(),
+    /** Sections the person has reached the end of (so they show as done even with skipped items). */
+    finished: z.array(z.string()).optional(),
+    lastSection: z.string().optional(),
+  }).default({}),
 });
 
 export const backupSchema = z.object({

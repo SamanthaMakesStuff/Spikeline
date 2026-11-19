@@ -81,3 +81,11 @@ export const LENS_WORDS: Record<Lens, string> = {
   S: 'switching, demands and being judged',
   W: 'energy and being run down',
 };
+
+/** Short forms used in the results summary sentence. */
+export const LENS_SUMMARY_WORDS: Record<Lens, string> = {
+  A: 'sensory load and uncertainty',
+  D: 'interest, novelty and timing',
+  S: 'switching, demands and being judged',
+  W: 'energy',
+};
